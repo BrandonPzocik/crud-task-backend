@@ -3,8 +3,8 @@ const newConnection = async () => {
     const connection = await mysql2.createConnection({
         host: "localhost" , 
         user: "root", 
-        database: "task_bd",
-        password: ""
+        password: "",
+        database: "tasks_db"
     })
     return connection
 }
