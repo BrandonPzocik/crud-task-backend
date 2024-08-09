@@ -1,6 +1,6 @@
-const mysql2 = require("mysql2/promise")
+import { createConnection } from "mysql2/promise"
 const newConnection = async () => {
-    const connection = await mysql2.createConnection({
+    const connection = await createConnection({
         host: "localhost" , 
         user: "root", 
         password: "",
@@ -9,6 +9,4 @@ const newConnection = async () => {
     return connection
 }
 
-module.exports = {
-    newConnection
-}
+export  {newConnection}

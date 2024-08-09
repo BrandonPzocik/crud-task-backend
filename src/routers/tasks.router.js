@@ -1,5 +1,5 @@
-const { newConnection } = require("../bd")
-const { getAllTasks, getOneTasks, createTask, deleteTask, editarTask } = require("../controllers/tasks.controller")
+const { newConnection } = require("../bd").default
+const { getAllTasks, getOneTasks, createTask, deleteTask, editarTask } = require("../controllers/tasks.controller").default
 
 const router = require("express").Router()
 //obtener todas las tareas 

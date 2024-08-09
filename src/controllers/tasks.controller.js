@@ -1,4 +1,4 @@
-const { newConnection } = require("../bd")
+import { newConnection } from "../bd.js"
 
 const getAllTasks = async (req, res)=> {
     const connection = await newConnection()
@@ -36,4 +36,4 @@ const editarTask = async (req, res) => {
     res.send("tarea actualizada con exito")
     connection.end
 }
-module.exports = {getAllTasks, getOneTasks, createTask, deleteTask, editarTask }
+export{getAllTasks, getOneTasks, createTask, deleteTask, editarTask }

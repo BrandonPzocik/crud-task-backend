@@ -1,7 +1,7 @@
-const express = require("express")
+import express, { json } from "express"
 const app = (express())
-app.use(express.json())
-const router = require("./routers/router")
+app.use(json())
+import {router} from "./routers/router.js"
 
 app.use(router)
 
