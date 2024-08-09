@@ -1,19 +1,19 @@
-const { newConnection } = require("../bd").default
-const { getAllTasks, getOneTasks, createTask, deleteTask, editarTask } = require("../controllers/tasks.controller").default
-
-const router = require("express").Router()
+import { newConnection } from "../bd.js"
+import { getAllTasks, getOneTasks, createTask, deleteTask, editarTask } from "../controllers/tasks.controller.js"
+import {Router} from "express"
+const tasksRouter = Router()
 //obtener todas las tareas 
-router.get("/tasks", getAllTasks)
+tasksRouter.get("/", getAllTasks)
 
 //obtener una tarea por su id 
-router.get("/task/:id", getOneTasks)
+tasksRouter.get("/:id", getOneTasks)
 
 //añadir una nueva tarea 
-router.post("/tasks", createTask)
+tasksRouter.post("/", createTask)
 
 // eliminar una tarea por id
-router.delete("/task/:id", deleteTask)
+tasksRouter.delete("/:id", deleteTask)
 
 //editar una tarea por su id
-router.put("/task/:id", editarTask)
-module.exports = router
+tasksRouter.put("/:id", editarTask)
+export {tasksRouter}
